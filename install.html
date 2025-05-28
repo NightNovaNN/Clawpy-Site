@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ClawPy — Installation Guide for the Free Math, AI, Physics, and Cryptography Framework by NightNovaNN." />
+  <meta name="theme-color" content="#92400e" />
+  <title>ClawPy — Installation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="https://raw.githubusercontent.com/NightNovaNN/Clawpy/main/logo.png" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Consolas&display=swap');
+
+    body {
+      font-family: 'Consolas', monospace !important;
+      transition: background-color 0.3s, ease-in-out;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 24px;
+      height: 16px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #facc15, #eab308);
+      border-radius: 4px;
+      border: 2px solid #FFFDD0;
+    }
+    ::-webkit-scroll {
+      background: linear-gradient(to bottom, #fcd34d, #fbbf24);
+    }
+    ::-webkit-scroll {
+      background-color: #FFFDD0;
+      border-radius: 6px;
+    }
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #FFD700 #FFFDD0;
+    }
+
+    /* Animations */
+    .animate {
+      animation: fadeIn 0.5s ease-out;
+      opacity: 1 !important;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Install Steps */
+    .install-step {
+      background-color: white;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    /* Code Blocks */
+    pre {
+      background-color: #fefce8;
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      overflow-x: auto;
+      font-family: 'Consolas', monospace !important;
+      color: #f4f4f4;
+      font-size: 1rem;
+    }
+
+    /* Troubleshooting */
+    .troubleshooting-section {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Version Dropdown */
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu a {
+      transition: background-color 0.2s ease;
+    }
+  </style>
+</head>
+<body class="bg-[#FFFDD0] text-slate-900 font-consolas min-h-screen flex flex-col">
+  <header class="bg-amber-800 text-white p-4 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <h1 class="text-2xl sm:text-3xl font-extrabold"><a href="index.html">ClawPy</a></h1>
+        <div class="relative dropdown">
+          <button class="text-amber-100 text-base sm:text-lg font-normal focus:outline-none" aria-label="Select version">
+            v0.1 <span class="ml-1">▼</span>
+          </button>
+          <div class="dropdown-menu hidden absolute bg-amber-700 text-white rounded-md shadow-lg mt-1 z-50">
+            <a href="index.html" class="block px-4 py-2 hover:bg-amber-600">v0.1</a>
+            <a href="#" class="block px-4 py-2 hover:bg-amber-600 opacity-50 cursor-not-allowed">v0.2 (Coming Soon)</a>
+          </div>
+        </div>
+      </div>
+      <nav class="hidden md:flex space-x-6 text-base font-semibold">
+        <a href="index.html" class="hover:text-amber-100 transition">Home</a>
+        <a href="features.html" class="hover:text-amber-100 transition">Features</a>
+        <a href="install.html" class="text-amber-300 underline" aria-current="page">Install</a>
+        <a href="quick.html" class="hover:text-amber-100 transition">Quick Start</a>
+        <a href="upcoming.html" class="hover:text-amber-100 transition">Upcoming</a>
+        <a href="license.html" class="hover:text-amber-100 transition">License</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden p-2 rounded hover:bg-amber-700" aria-label="Toggle navigation">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-amber-700">
+      <nav class="flex flex-col items-center space-y-4 py-4 text-base font-semibold">
+        <a href="index.html" class="hover:text-amber-100 transition">Home</a>
+        <a href="features.html" class="hover:text-amber-100 transition">Features</a>
+        <a href="install.html" class="text-amber-300 underline" aria-current="page">Install</a>
+        <a href="quick.html" class="hover:text-amber-100 transition">Quick Start</a>
+        <a href="upcoming.html" class="hover:text-amber-100 transition">Upcoming</a>
+        <a href="license.html" class="hover:text-amber-100 transition">License</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 sm:px-6 py-12 max-w-4xl flex-1">
+    <section class="text-center mb-16 animate-fade-in">
+      <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 text-amber-900">Install ClawPy</h2>
+      <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-900">
+        Get started with ClawPy in just a few steps. Follow the instructions below to install the framework and its dependencies on your system.
+      </p>
+    </section>
+
+    <section class="space-y-8 mb-16">
+      <div class="install-step transform hover:scale-105 transition animate-fade-in">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 text-emerald-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+          <h3 class="text-xl font-semibold text-amber-900">1. Install Python</h3>
+        </div>
+        <p class="text-slate-900 text-base sm:text-lg">
+          Ensure Python 3.8 or higher is installed. Download from <a href="https://www.python.org/downloads/" class="text-emerald-700 hover:underline">python.org</a>.
+        </p>
+      </div>
+
+      <div class="install-step transform hover:scale-105 transition animate-fade-in">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 text-emerald-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5-5H4v16h16V4z" />
+          </svg>
+          <h3 class="text-xl font-semibold text-amber-900">2. Install pip</h3>
+        </div>
+        <p class="text-slate-900 text-base sm:text-lg">
+          Verify pip is installed:
+        </p>
+        <div class="mt-2">
+          <pre class="rounded p-5 overflow-x-auto font-mono text-amber-800 text-base sm:text-lg select-all">pip --version</pre>
+        </div>
+        <p class="mt-2 text-gray-600 text-sm sm:text-base italic">
+          If pip is not found, install it via <a href="https://pip.pypa.io/en/stable/installation/" class="text-emerald-700 hover:underline">pip's official guide</a>.
+        </p>
+      </div>
+
+      <div class="install-step transform hover:scale-105 transition animate-fade-in">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 text-emerald-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4-4-4-4m8 4h8" />
+          </svg>
+          <h3 class="text-xl font-semibold text-amber-900">3. Install ClawPy</h3>
+        </div>
+        <p class="text-slate-900 text-base sm:text-lg">
+          Install ClawPy via pip:
+        </p>
+        <div class="mt-2">
+          <pre class="rounded p-5 overflow-x-auto font-mono text-amber-800 text-base sm:text-lg select-all">pip install clawpy</pre>
+        </div>
+      </div>
+
+      <div class="install-step transform hover:scale-105 transition animate-fade-in">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 text-emerald-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          </svg>
+          <h3 class="text-xl font-semibold text-amber-900">4. Install Dependencies</h3>
+        </div>
+        <p class="text-slate-900 text-base sm:text-lg">
+          Install optional dependencies for full functionality:
+        </p>
+        <div class="mt-2">
+          <pre class="rounded p-5 overflow-x-auto font-mono text-amber-800 text-base sm:text-lg select-all">pip install matplotlib sympy numpy</pre>
+        </div>
+      </div>
+
+      <div class="install-step transform hover:scale-105 transition animate-fade-in">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 text-emerald-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <h3 class="text-xl font-semibold text-amber-900">5. Verify Installation</h3>
+        </div>
+        <p class="text-slate-900 text-base sm:text-lg">
+          Confirm ClawPy is installed by checking its version:
+        </p>
+        <div class="mt-2">
+          <pre class="rounded p-5 overflow-x-auto font-mono text-amber-800 text-base sm:text-lg select-all">pip show clawpy</pre>
+        </div>
+        <p class="mt-2 text-gray-600 text-sm sm:text-base italic">This should output the installed version with all other details.</p>
+      </div>
+
+      <div class="install-step transform hover:scale-105 transition animate-fade-in">
+        <div class="flex items-center mb-4">
+          <svg class="w-8 h-8 text-emerald-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+          <h3 class="text-xl font-semibold text-amber-900">6. Getting Started</h3>
+        </div>
+        <p class="text-slate-900 text-base sm:text-lg">
+          Try a simple ClawPy example:
+        </p>
+        <div class="mt-2">
+          <pre class="rounded p-5 overflow-x-auto font-mono text-amber-800 text-base sm:text-lg select-all">from clawpy import BasicMath
+cw = BasicMath()
+
+print(cw.add(8,5))  # Should print 13
+print(cw.multiply(7,8))  # Should print 56</pre>
+        </div>
+        <p class="mt-2 text-gray-600 text-sm sm:text-base italic">This should output 13 and 56 respectively.</p>
+      </div>
+    </section>
+
+    <p class="mt-6 text-center mb-14">
+      <a href="https://pypi.org/project/clawpy/" target="_blank" class="inline-block bg-amber-600 text-white font-semibold py-2 px-4 rounded hover:bg-amber-700 transition">
+        View ClawPy on PyPI
+      </a>
+    </p>
+
+    <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-16 animate-fade-in troubleshooting-section">
+      <h3 class="text-2xl sm:text-3xl font-bold mb-6 border-b-4 border-amber-400 pb-2">Troubleshooting</h3>
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-xl font-semibold text-amber-900 mb-2">Pip Not Found</h4>
+          <p class="text-slate-900 text-base sm:text-lg">
+            If you see a "pip not found" error, ensure pip is installed:
+          </p>
+          <div class="mt-2">
+            <pre class="rounded p-5 overflow-x-auto font-mono text-amber-800 text-base sm:text-lg select-all">python -m ensurepip --upgrade
+python -m pip install --upgrade pip</pre>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold text-amber-900 mb-2">Dependency Conflicts</h4>
+          <p class="text-slate-900 text-base sm:text-lg">
+            If you encounter dependency issues, try upgrading pip or using a virtual environment. Alternatively, install a specific version:
+          </p>
+          <div class="mt-2">
+            <pre class="rounded p-5 overflow-x-auto font-mono text-amber-800 text-base sm:text-lg select-all">pip install clawpy==0.1</pre>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold text-amber-900 mb-2">Need Help?</h4>
+          <p class="text-slate-900 text-base sm:text-lg">
+            Visit our <a href="https://github.com/NightNovaNN/Clawpy/issues" target="_blank" class="text-emerald-700 hover:underline">GitHub Issues</a> page to report problems or ask questions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-center mb-12 animate-fade-in">
+      <h3 class="text-2xl sm:text-3xl font-bold mb-4 border-b-4 border-amber-400 pb-2 inline-block">Ready to Start?</h3>
+      <p class="max-w-xl mx-auto mb-6 text-base sm:text-lg text-slate-900">
+        Once installed, dive into ClawPy’s features with our quick start guide or explore its capabilities in depth.
+      </p>
+      <div class="flex justify-center space-x-4">
+        <a href="quick.html" class="inline-block bg-amber-600 hover:bg-amber-700 text-white px-6 sm:px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105" aria-label="Go to Quick Start">Quick Start</a>
+        <a href="features.html" class="inline-block bg-slate-600 hover:bg-slate-700 text-white px-6 sm:px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105" aria-label="Explore Features">Explore Features</a>
+      </div>
+    </section>
+
+    <section class="text-center mb-12">
+      <p class="text-gray-600 text-sm">© 2025 ClawPy — Built with ❤️ by NightNova</p>
+    </section>
+  </main>
+
+  <footer class="bg-amber-800 text-white py-8">
+    <div class="container mx-auto px-4 sm:px-6 text-center">
+      <p class="text-base mb-4">ClawPy — Empowering Math and Science Exploration</p>
+      <nav class="flex justify-center space-x-4 sm:space-x-6 text-sm sm:text-base">
+        <a href="index.html" class="hover:text-amber-100 transition">Home</a>
+        <a href="features.html" class="hover:text-amber-100 transition">Features</a>
+        <a href="install.html" class="text-amber-300 underline" aria-current="page">Install</a>
+        <a href="quick.html" class="hover:text-amber-100 transition">Quick Start</a>
+        <a href="upcoming.html" class="hover:text-amber-100 transition">Upcoming</a>
+        <a href="license.html" class="hover:text-amber-100 transition">License</a>
+      </nav>
+      <div class="mt-4 flex justify-center space-x-4">
+        <a href="https://github.com/NightNovaNN/Clawpy" target="_blank" class="hover:text-amber-100 transition" aria-label="GitHub">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.66-.22.66-.49v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1.01.07 1.54 1.04 1.54 1.04.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0112 6.8c.85 0 1.71.11 2.51.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.93.68 1.87v2.77c0 .27.16.58.67.49A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
